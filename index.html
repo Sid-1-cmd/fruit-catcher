@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fruit Catcher - Enter Name</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 class="game-title">🍓 Fruit Catcher</h1>
+    <form id="nameForm">
+      <input type="text" id="playerName" placeholder="Enter your name..." required />
+      <button type="submit">Start Game</button>
+    </form>
+  </div>
+  <script>
+    document.getElementById("nameForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const name = document.getElementById("playerName").value.trim();
+      if(name !== ""){
+        localStorage.setItem("playerName", name);
+        window.location.href = "game.html";
+      }
+    });
+  </script>
+</body>
+</html>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    color: #da1d1d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .container {
+    text-align: center;
+  }
+  .game-title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  input[type="text"] {
+    padding: 10px;
+    width: 200px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #0d0e0dff;
+  }
+  button {
+    padding: 10px 15px;
+    font-size: 1em;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #883921;
+  }

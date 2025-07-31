@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fruit Catcher - Play</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="game-header">
+    <span id="playerLabel">Player: </span>
+    <span id="scoreLabel">Score: 0</span>
+  </div>
+  <canvas id="gameCanvas" width="800" height="600"></canvas>
+  <script src="game.js"></script>
+  <script>
+    const playerName = localStorage.getItem("playerName") || "Player";
+    document.getElementById("playerLabel").textContent += playerName;
+  </script>
+</body>
+</html>

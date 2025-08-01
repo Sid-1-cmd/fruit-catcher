@@ -1,90 +1,61 @@
-/* General body styling */
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full-screen body with background image */
 body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom, #56ab2f, #a8e063);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    background: url('assets/Bk.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Title and heading styling */
-h1, h2 {
-  color: #2c3e50;
-  margin: 10px 0;
-  text-align: center;
+/* Optional dark overlay for contrast */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.15); /* You can increase this for more darkness */
+    z-index: -1;
 }
 
-/* Button design */
-button {
-  padding: 12px 25px;
-  font-size: 18px;
-  background-color: #2ecc71;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+/* Game container */
+#gameCanvas {
+    background-color: rgba(144, 238, 144, 0.9); /* Light green with some transparency */
+    border: 4px solid #1e3d59;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+    display: block;
 }
 
-button:hover {
-  background-color: #27ae60;
+/* Score text */
+#scoreDisplay {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px #000;
 }
 
-/* Input box */
-input[type="text"] {
-  padding: 10px;
-  font-size: 18px;
-  border: 2px solid #27ae60;
-  border-radius: 8px;
-  margin-top: 10px;
-}
+/* Make it responsive on mobile */
+@media (max-width: 768px) {
+    #gameCanvas {
+        width: 90vw;
+        height: auto;
+    }
 
-/* Game canvas styling */
-canvas#gameCanvas {
-  background-image: url('https://unpkg.com/hero-patterns@1.0.6/svg/polka-dots.svg'),
-                    linear-gradient(to bottom, #a8e063, #56ab2f);
-  background-size: 40px 40px;
-  background-repeat: repeat;
-  border: 4px solid #2c3e50;
-  border-radius: 15px;
-  margin-top: 80px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    #scoreDisplay {
+        font-size: 1.2rem;
+    }
 }
-
-/* Scoreboard table */
-table {
-  border-collapse: collapse;
-  width: 90%;
-  margin-top: 30px;
-}
-
-th, td {
-  border: 1px solid #2ecc71;
-  padding: 12px;
-  text-align: center;
-}
-
-th {
-  background-color: #2ecc71;
-  color: white;
-}
-
-td {
-  background-color: #ecf0f1;
-}
-
-/* Footer credits */
-footer {
-  margin-top: 50px;
-  color: #888;
-  font-size: 14px;
-  text-align: center;
-}
-.latest-player {
-  background-color: #e0ffe0;
-  font-weight: bold;
-}
-

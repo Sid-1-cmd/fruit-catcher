@@ -3,37 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Game Over</title>
+  <title>Fruit Catcher - Scoreboard</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="score-body">
+<body>
   <div class="score-container">
     <h1>🍇 Game Over!</h1>
-    <h2>Well Played, <span id="playerName">Player</span>!</h2>
-    <p>Total Score: <span id="totalScore">0</span></p>
 
-    <h3>Points per Fruit:</h3>
-    <ul class="fruit-points">
-      <li>🍉 watermelon: 60 points</li>
-      <li>🍎 apple: 50 points</li>
-      <li>🧟 zombie: -10 points</li>
-      <li>🍊 orange: 45 points</li>
-      <li>🍇 grapes: 40 points</li>
-    </ul>
+    <!-- Player-specific stats -->
+    <div id="playerStats"></div>
 
+    <!-- Leaderboard -->
     <h3>🏆 High Scores</h3>
-    <table id="scoreTable">
-      <thead>
-        <tr><th>Rank</th><th>Name</th><th>Total Score</th></tr>
-      </thead>
-      <tbody>
-        <!-- Dynamic scores go here -->
-      </tbody>
-    </table>
+    <table id="scoreTable"></table>
 
-    <a href="game.html" class="play-again">🔁 Play Again</a>
+    <a href="index.html" class="play-again">🔁 Play Again</a>
   </div>
 
   <script src="score.js"></script>
 </body>
 </html>
+

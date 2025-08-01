@@ -1,130 +1,65 @@
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.score-body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: url('assets/bg-night-forest.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
 }
 
-/* Full-screen body with background image */
-body {
-    font-family: 'Arial', sans-serif;
-    height: 100vh;
-    background: url('assets/Bk.jpg') no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 20px;
-    text-align: center;
+.score-container {
+  background: rgba(144, 238, 144, 0.25); /* light green glass */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px 40px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
 }
 
-/* Optional dark overlay for contrast */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    background: rgba(0, 0, 0, 0.15);
-    z-index: -1;
+.score-container h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
-/* Glassmorphism scoreboard container */
-.score-glass {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    color: #fff;
-    padding: 30px;
-    max-width: 700px;
-    width: 90%;
-    margin: 20px auto;
+.fruit-points {
+  text-align: left;
+  padding-left: 20px;
 }
 
-/* Scoreboard headings and text */
-.score-glass h1,
-.score-glass h2,
-.score-glass h3,
-.score-glass p {
-    color: #fff;
-    margin: 12px 0;
-    text-shadow: 1px 1px 4px #000;
+#scoreTable {
+  width: 100%;
+  margin-top: 10px;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Points per fruit list */
-.score-glass ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 10px;
+#scoreTable th, #scoreTable td {
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
 }
 
-.score-glass ul li {
-    margin: 5px 0;
-    font-size: 1rem;
+.play-again {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #ffffff33;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: 0.3s ease;
 }
 
-/* High scores table */
-.score-glass table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-.score-glass table th,
-.score-glass table td {
-    padding: 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    color: #fff;
-    text-shadow: 1px 1px 3px #000;
-}
-
-/* Play Again button */
-.score-glass a {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 10px 25px;
-    background: rgba(255, 255, 255, 0.2);
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    text-decoration: none;
-    border-radius: 10px;
-    transition: background 0.3s ease, color 0.3s ease;
-}
-
-.score-glass a:hover {
-    background: rgba(255, 255, 255, 0.35);
-    color: #000;
-}
-
-/* Score text (for game canvas if needed) */
-#scoreDisplay {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    color: #fff;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-shadow: 1px 1px 5px #000;
-}
-
-/* Make it responsive on mobile */
-@media (max-width: 768px) {
-    #gameCanvas {
-        width: 90vw;
-        height: auto;
-    }
-
-    #scoreDisplay {
-        font-size: 1.2rem;
-    }
-
-    .score-glass {
-        padding: 20px;
-        font-size: 0.95rem;
-    }
+.play-again:hover {
+  background: #ffffff55;
+  transform: scale(1.05);
 }
